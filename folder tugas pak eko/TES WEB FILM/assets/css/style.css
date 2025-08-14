@@ -1,0 +1,167 @@
+*{
+    margin: 0%;
+    padding: 0%;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+main {
+    background-color:rgba(0, 0, 0, 0.897)}
+
+header {
+    background: url("../../images/bg/main.jpg");
+    height: 90vh;
+    background-size: cover;
+    background-attachment: fixed;
+    display: flex;
+    color: bisque;
+    flex-direction: column;
+}
+
+header div {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+header div h3 {
+    background-color: rgb(136, 198, 255);
+    padding: 5px;
+    border-radius: 8px;
+}
+
+nav {
+    display: flex;
+    background-color: rgba(0, 0 , 0, 0.7);
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    position: fixed;
+}
+
+nav h1 {
+    font-weight: bold;
+    border: 2px solid white;
+    border-radius: 7px;
+    padding: 5px;
+    margin: 10px;
+}
+nav ul {
+    display: flex;
+    list-style: none;
+}
+nav ul li {
+    margin: 10px;
+}
+nav ul li a{
+    color: white;
+    text-decoration: none;
+}
+nav ul li a:hover{
+    color: tomato;
+    text-decoration: underline;
+}
+
+.superhero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.superhero .card img {
+    width: 200px;
+}
+
+.superhero .card {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+
+.superhero .card button {
+    background-color: orange;
+    padding: 5px;
+    border: none;
+}
+
+footer {
+    width: 100%;
+    background-color: brown;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+section h1 {
+    
+    text-align: center;
+    color: white;
+}
+
+div>button>a {
+    color: black; text-decoration: none;
+}
+
+
+
+.sinopsis
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  padding: 40px;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 800px;
+  margin: auto;
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+h1 {
+  text-align: center;
+  color: #d32f2f;
+}
+
+img {
+  display: block;
+  margin: 0 auto 20px;
+  width: 100%;
+  max-width: 400px;
+  border-radius: 8px;
+}
+
+.sinopsis2
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  padding: 40px;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 800px;
+  margin: auto;
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+h1 {
+  text-align: center;
+  color: #d32f2f;
+}
+
+img {
+  display: block;
+  margin: 0 auto 20px;
+  width: 100%;
+  max-width: 400px;
+  border-radius: 8px;
+}

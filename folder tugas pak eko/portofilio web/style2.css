@@ -1,0 +1,107 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+background: linear-gradient(90deg, rgba(0, 32, 36, 1) 0%, rgba(9, 114, 121, 1) 0%, rgba(0, 238, 255, 1) 100%);
+  color: #000;
+}
+
+/* Styling Header dan Navigasi */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 10%;
+  background: #002024;
+background: linear-gradient(90deg, rgba(0, 32, 36, 1) 0%, rgba(9, 114, 121, 1) 0%, rgba(0, 238, 255, 1) 100%);
+}
+nav a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: #073841;
+  font-weight: 600;
+  position: relative;   /* Penting untuk animasi ::after */
+  padding-bottom: 5px;
+}
+/* Animasi Garis Bawah Saat Hover dan Untuk Menu Aktif */
+nav a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background: #008f8fab;
+  transition: width 0.3s ease;
+}
+
+nav a:hover::after,
+nav a.active::after {
+  width: 100%;
+}
+
+/* --- Bagian About (Section) --- */
+.about-section {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 40px;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.image {
+    flex-shrink: 0;
+}
+
+.image img {
+    width: 300px; /* Ukuran gambar */
+    height: auto;
+    border-radius: 10px; /* Sudut melengkung */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.about-text {
+    flex: 1; /* Mengisi sisa ruang */
+    text-align: left;
+}
+
+.about-text h3 {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #1a73e8;
+}
+
+.about-text p {
+    font-size: 16px;
+    color: #666;
+}
+
+/* Penyesuaian untuk ukuran layar yang lebih kecil */
+@media (max-width: 768px) {
+    .about-section {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .about-text {
+        margin-top: 20px;
+    }
+
+    header {
+        flex-direction: column;
+    }
+
+    nav {
+        margin-top: 10px;
+    }
+
+    nav a {
+        margin: 0 10px;
+    }
+}

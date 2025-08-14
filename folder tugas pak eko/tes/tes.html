@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Pendaftaran Siswa</title>
+</head>
+<body>
+<style>
+    
+</style>
+<div class="form">
+    <fieldset style="width: 600px;">
+        <legend> <h2>Formulir Pendaftaran Siswa</h2></legend>
+  <form>
+    <table style="color: navy;">
+      <tr>
+        <td>Nama Calon Siswa</td>
+        <td>:</td>
+        <td><input type="text" name="nama" /></td>
+      </tr>
+      <tr>
+        <td>Tempat/Tanggal Lahir</td>
+        <td>:</td>
+        <td>
+          <input type="text" name="tempat" placeholder="Tempat" />
+          <input type="date" name="tanggal" />
+        </td>
+      </tr>
+      <tr>
+        <td>Agama</td>
+        <td>:</td>
+        <td>
+          <select name="agama">
+            <option>Islam</option>
+            <option>Kristen</option>
+            <option>Katolik</option>
+            <option>Hindu</option>
+            <option>Buddha</option>
+            <option>Konghucu</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td>Alamat</td>
+        <td>:</td>
+        <td><textarea name="alamat" rows="4" cols="30"></textarea></td>
+      </tr>
+      <tr>
+        <td>No Telp/HP</td>
+        <td>:</td>
+        <td><input type="tel" name="telepon" value="" /></td>
+      </tr>
+      <tr>
+        <td>Jenis Kelamin</td>
+        <td>:</td>
+        <td>
+          <input type="radio" name="jk" value="Pria" /> Pria
+          <input type="radio" name="jk" value="Wanita" /> Wanita
+        </td>
+      </tr>
+      <tr>
+        <td>Hobi</td>
+        <td>:</td>
+        <td>
+          <input type="checkbox" name="hobi" value="Membaca" /> Membaca
+          <input type="checkbox" name="hobi" value="Main game" /> main game
+          <input type="checkbox" name="hobi" value="Olahraga" /> Olahraga
+        </td>
+      </tr>
+      <tr>
+        <td>Pas Foto</td>
+        <td>:</td>
+        <td><input type="file" name="foto" /></td>
+      </tr>
+      <tr>
+        <td>
+          <input type="submit" value="SUBMIT" />
+        </td>
+      </tr>
+    </table>
+  </form>
+</div>
+
+</body>
+</html>

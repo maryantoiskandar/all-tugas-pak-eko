@@ -1,0 +1,96 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+background: linear-gradient(90deg, rgba(0, 32, 36, 1) 0%, rgba(9, 114, 121, 1) 0%, rgba(0, 238, 255, 1) 100%);
+  color: #000;
+}
+
+/* Styling Header dan Navigasi */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 10%;
+  background: #002024;
+background: linear-gradient(90deg, rgba(0, 32, 36, 1) 0%, rgba(9, 114, 121, 1) 0%, rgba(0, 238, 255, 1) 100%);
+}
+nav a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: #073841;
+  font-weight: 600;
+  position: relative;   /* Penting untuk animasi ::after */
+  padding-bottom: 5px;
+}
+/* Animasi Garis Bawah Saat Hover dan Untuk Menu Aktif */
+nav a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background: #008f8fab;
+  transition: width 0.3s ease;
+}
+
+nav a:hover::after,
+nav a.active::after {
+  width: 100%;
+}
+/* Styling untuk container dan bagian lainnya */
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5% 10%;
+}
+
+.text {
+  max-width: 50%;
+}
+
+.text h1 {
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.text h1 span {
+  color: #003d9e;
+}
+
+.text button {
+  padding: 10px 20px;
+  background: #6b89b8;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.socials {
+  margin-top: 20px;
+  font-size: 24px;
+}
+
+.socials i {
+  margin-right: 15px;
+  cursor: pointer;
+}
+
+.image img {
+  width: 300px;
+  border-radius: 50%;
+  background: #3B82F6;
+  padding: 20px;
+}
+
+

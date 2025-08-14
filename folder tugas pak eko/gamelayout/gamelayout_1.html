@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Game Tebak Angka</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f0f4f8;
+      text-align: center;
+      padding: 50px;
+      color: #333;
+    }
+
+    h1 {
+      color: #0077cc;
+    }
+
+    p {
+      font-size: 18px;
+    }
+
+    input[type="number"] {
+      padding: 10px;
+      font-size: 16px;
+      width: 200px;
+      margin: 10px;
+      border: 2px solid #0077cc;
+      border-radius: 5px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #0077cc;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin: 5px;
+    }
+
+    button:hover {
+      background-color: #005fa3;
+    }
+
+    #hasil {
+      font-weight: bold;
+      margin-top: 20px;
+      font-size: 20px;
+      color: #cc0000;
+    }
+
+    #skor, #riwayat, #highScore {
+      font-size: 16px;
+      margin-top: 10px;
+    }
+
+    .container {
+      background: white;
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Game Tebak Angka 🎮</h1>
+    <p>Saya menyimpan angka antara <strong>1 sampai 100</strong>. Kamu punya <strong>15 kali percobaan</strong>!</p>
+
+    <input type="number" id="tebakan" placeholder="Masukkan angka 1-100" min="1" max="100">
+    <br>
+    <button onclick="cekTebakan()">Tebak!</button>
+    <button onclick="mulaiUlang()">Main Lagi 🔄</button>
+
+    <p id="hasil"></p>
+    <p id="skor">Sisa Percobaan: 15</p>
+    <p id="riwayat">Tebakan sebelumnya: -</p>
+    <p id="highScore">Skor Tertinggi: -</p>
+  </div>
+
+  <script>
+    let angkaBenar = Math.floor(Math.random() * 100) + 1;
+    let sisaPercobaan = 15;
+    let riwayatTebakan = [];
+    let gameOver = false;
+
+    let highScore = localStorage.getItem("highScore") ? parseInt(localStorage.getItem("highScore")) : null;
+    updateHighScoreDisplay();
+
+    function cekTebakan() {
+      if (gameOver) return;
+
+      const tebakan = parseInt(document.getElementById("tebakan").value);
+      const hasil = document.getElementById("hasil");
+      const tampilSkor = document.getElementById("skor");
+      const tampilRiwayat = document.getElementById("riwayat");
+
+      if (tebakan >= 1 && tebakan <= 100) {
+        riwayatTebakan.push(tebakan);
+        tampilRiwayat.textContent = "Tebakan sebelumnya: " + riwayatTebakan.join(", ");
+
+        if (tebakan === angkaBenar) {
+          const percobaanDigunakan = 15 - sisaPercobaan + 1;
+          hasil.textContent = Tebakan kamu benar! 🎉 Kamu menebak dalam ${percobaanDigunakan} percobaan.;
+          hasil.style.color = "green";
+
+          if (!highScore || percobaanDigunakan < highScore) {
+            highScore = percobaanDigunakan;
+            localStorage.setItem("highScore", highScore);
+            updateHighScoreDisplay();
+          }
+
+          gameOver = true;
+        } else {
+          sisaPercobaan -= 1;
+          tampilSkor.textContent = Sisa Percobaan: ${sisaPercobaan};
+          hasil.style.color = "#cc0000";
+
+          const selisih = Math.abs(tebakan - angkaBenar);
+          let pesan = "";
+
+          // Info terlalu tinggi/rendah
+          if (tebakan < angkaBenar) {
+            pesan = "Terlalu rendah.";
+          } else {
+            pesan = "Terlalu tinggi.";
+          }
+
+          // Komentar tambahan berdasarkan selisih
+          if (selisih <= 5) {
+            pesan += " 🔥 Hampir mendekati!";
+          } else if (selisih <= 10) {
+            pesan += " 🌡 Mendekati.";
+          } else if (selisih > 20) {
+            pesan += " ❄ Terlalu jauh!";
+          }
+
+          if (sisaPercobaan === 0) {
+            hasil.textContent = Kamu kalah! 😞 Angka yang benar adalah ${angkaBenar}.;
+            gameOver = true;
+          } else {
+            hasil.textContent = pesan;
+          }
+        }
+      } else {
+        hasil.textContent = "Masukkan angka yang valid (1-100).";
+        hasil.style.color = "#cc0000";
+      }
+    }
+
+    function mulaiUlang() {
+      angkaBenar = Math.floor(Math.random() * 100) + 1;
+      sisaPercobaan = 15;
+      riwayatTebakan = [];
+      gameOver = false;
+
+      document.getElementById("tebakan").value = "";
+      document.getElementById("hasil").textContent = "";
+      document.getElementById("skor").textContent = "Sisa Percobaan: 15";
+      document.getElementById("riwayat").textContent = "Tebakan sebelumnya: -";
+    }
+
+    function updateHighScoreDisplay() {
+      const display = document.getElementById("highScore");
+      if (highScore) {
+        display.textContent = Skor Tertinggi: ${highScore} percobaan;
+      } else {
+        display.textContent = "Skor Tertinggi: -";
+      }
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Game Tebak Angka 🎮</title>
+  <link rel="stylesheet" href="vivir.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Game Tebak Umur Saya 🎮</h1>
+    <p>Saya menyimpan angka antara <strong>1 sampai 100</strong>. Kamu punya <strong>15 kali percobaan</strong>!</p>
+
+    <input type="number" id="tebakan" placeholder="Masukkan angka 1 - 100" min="1" max="100">
+    <br>
+    <button id="btnTebak">Tebak</button>
+    <button onclick="mulaiUlang()">Main Lagi 🔄</button>
+
+    <p id="hasil"></p>
+    <p id="skor">Sisa Percobaan: 15</p>
+    <p id="riwayat">Tebakan sebelumnya: -</p>
+    <p id="highScore">Skor Tertinggi: -</p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

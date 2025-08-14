@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Warung kopi favorit saya</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color:rgb(138, 236, 243);
+            margin: 20px;
+        }
+        h1 {
+            color: blue;
+            text-align: center;
+        }
+        img {
+            display: block;
+            margin: 0 auto;
+            max-width: 80%;
+            border-radius: 10px;
+        }
+        .deskripsi {
+            margin: 20px auto;
+            max-width: 700px;
+            text-align: center;
+            font-size: 18px;
+            color:black;
+        }
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid #241d1d;
+        }
+        th, td {
+            padding: 10px;
+            text-align: center;
+        }
+        form {
+            width: 80%;
+            margin: 30px auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            background-color: #fffbe6;
+            border-radius: 8px;
+        }
+        label, select, input, textarea {
+            display: block;
+            width: 100%;
+            margin-top: 10px;
+        }
+        button {
+            margin-top: 15px;
+            padding: 10px 20px;
+            background-color: #6f4e37;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        ul {
+            width: 80%;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Warung Kopi Favorit saya</h1>
+
+<img src="img/tugas2.jpg" alt="Warung Kopi Favorit">
+
+<div class="deskripsi"> <b>
+    Suasana warung kopi ini sangat nyaman dan hangat seperti caffe. Dengan dekorasi kayu dan lampu remang-remang, tempat ini cocok untuk bersantai, ngobrol, atau kerja santai. 
+    Kopinya enak, baristanya ramah, dan tempatnya cocok dijadikan story ig.
+</b>
+</div>
+
+<h2 style="text-align:center;">Daftar Menu</h2>
+<ul> <b>
+    <li>Kopi Hitam - Minuman - Rp20.000</li>
+    <li>Cappuccino - Minuman - Rp35.000</li>
+    <li>Espresso - Minuman - Rp20.000</li>
+    <li>Roti Bakar - Makanan - Rp20.000</li>
+    <li>Mie Goreng - Makanan - Rp20.000</li>
+</b>
+</ul>
+
+<h2 style="text-align:center;">Tabel Menu dan Harga</h2>
+<table>
+    <tr>
+        <th>Menu</th>
+        <th>Kategori</th>
+        <th>Harga</th>
+    </tr>
+    <tr>
+        <td>Kopi Hitam</td>
+        <td>Minuman</td>
+        <td>Rp20.000</td>
+    </tr>
+    <tr>
+        <td>Cappuccino</td>
+        <td>Minuman</td>
+        <td>Rp35.000</td>
+    </tr>
+    <tr>
+        <td>Espresso</td>
+        <td>Minuman</td>
+        <td>Rp20.000</td>
+    </tr>
+    <tr>
+        <td>Roti Bakar</td>
+        <td>Makanan</td>
+        <td>Rp20.000</td>
+    </tr>
+    <tr>
+        <td>Mie Goreng</td>
+        <td>Makanan</td>
+        <td>Rp20.000</td>
+    </tr>
+</table>
+
+<h2 style="text-align:center;">Formulir Pemesanan</h2>
+<form>
+    <label for="nama">Nama Pelanggan</label>
+    <input type="text" id="nama" name="nama" value="MR.ISKANDAR DAN MR.FRIEDRICH" readonly>
+
+    <label for="menu">Pilihan Menu</label>
+    <select id="menu" name="menu">
+        <option value="kopi hitam">Kopi Hitam</option>
+        <option value="cappuccino">Cappuccino</option>
+        <option value="espresso">Espresso</option>
+        <option value="roti bakar">Roti Bakar</option>
+        <option value="mie goreng">Mie Goreng</option>
+    </select>
+
+    <label for="catatan">Catatan Tambahan</label>
+    <textarea id="catatan" name="catatan" rows="3" placeholder="Contoh: tanpa gula, ekstra pedas, dll."></textarea>
+
+    <button type="submit">Pesan Sekarang</button>
+</form>
+
+<p style="text-align:center; margin-top:30px; font-style:italic;">WEB BY M.ISKANDAR</p>
+
+</body>
+</html>
